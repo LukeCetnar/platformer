@@ -9,7 +9,7 @@ function Player(){
   this.leftPressed = false;
   this.rightPressed = false;
   this.hasJumped = false;
-
+  this.img = document.getElementById("scream");
 
   this.jump = function(){
 	  if(!this.hasJumped){
@@ -18,11 +18,7 @@ function Player(){
   }
 
   this.draw = function(){
-    ctx.beginPath();
-    ctx.rect(this.x, this.y, this.width, this.height);
-    ctx.fillStyle = "#0CB200";
-    ctx.fill();
-    ctx.closePath();
+    ctx.drawImage(this.img, this.x, this.y, 100, 100);
   }
 
   this.update = function(){
